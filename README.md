@@ -198,9 +198,11 @@
     }
     .flottant small{ font-family:var(--mono); font-size:11px; color:var(--ardoise); display:block; margin-bottom:4px; }
     .flottant strong{ font-size:20px; letter-spacing:-.03em; font-weight:600; }
-    .f1{ left:4%; top:30%; }
-    .f2{ right:5%; top:24%; animation-delay:-2.5s; }
-    .f3{ right:9%; bottom:18%; animation-delay:-4.5s; }
+    /* positionnées par rapport au bloc du titre, jamais par-dessus */
+    .flottant{ z-index:2; text-align:left; white-space:nowrap; }
+    .f1{ right:calc(50% + 450px); top:40%; }
+    .f2{ left:calc(50% + 450px); top:12%; animation-delay:-2.5s; }
+    .f3{ left:calc(50% + 330px); bottom:-10px; animation-delay:-4.5s; }
     .f1 .barres{ display:flex; align-items:flex-end; gap:4px; height:34px; margin-top:8px; }
     .f1 .barres i{ width:8px; border-radius:3px; background:var(--ciel); }
     .f1 .barres i:last-child{ background:var(--ardoise); }
@@ -466,9 +468,9 @@
     @keyframes descend{ from{ opacity:0; transform:translate(-50%,-20px); } to{ opacity:1; transform:translate(-50%,0); } }
 
     /* ───────── Responsive ───────── */
+    @media (max-width: 1360px){ .flottant{ display:none; } }
     @media (max-width: 1000px){
       .nav-links{ display:none; }
-      .flottant{ display:none; }
       .duo, .methode .duo{ grid-template-columns:1fr; gap:56px; }
       .methode .collant{ position:static; }
       .grille, .projets{ grid-template-columns:repeat(2,1fr); }
@@ -520,21 +522,21 @@
   <section class="hero" id="top">
     <div class="anneaux"><span></span><span></span><span></span><span></span></div>
 
-    <div class="flottant f1">
-      <small>Engagement</small>
-      <strong>+ Visibilité</strong>
-      <div class="barres"><i style="height:30%"></i><i style="height:45%"></i><i style="height:40%"></i><i style="height:65%"></i><i style="height:100%"></i></div>
-    </div>
-    <div class="flottant f2">
-      <small>Reels · Stories · Posts</small>
-      <strong>Contenu planifié</strong>
-    </div>
-    <div class="flottant f3">
-      <div class="pastille">✦</div>
-      <div><small>Nouvelle abonnée</small>Votre communauté grandit</div>
-    </div>
-
     <div class="wrap hero-inner">
+      <div class="flottant f1">
+        <small>Engagement</small>
+        <strong>+ Visibilité</strong>
+        <div class="barres"><i style="height:30%"></i><i style="height:45%"></i><i style="height:40%"></i><i style="height:65%"></i><i style="height:100%"></i></div>
+      </div>
+      <div class="flottant f2">
+        <small>Reels · Stories · Posts</small>
+        <strong>Contenu planifié</strong>
+      </div>
+      <div class="flottant f3">
+        <div class="pastille">✦</div>
+        <div><small>Nouvelle abonnée</small>Votre communauté grandit</div>
+      </div>
+
       <span class="badge reveal" style="--d:.1s"><b>Studio créatif</b> <span class="suite">Communication digitale · Réseaux sociaux</span><span class="court">Réseaux sociaux</span></span>
 
       <h1>
